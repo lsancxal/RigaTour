@@ -1,0 +1,121 @@
+
+
+<android.support.v4.widget.DrawerLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:id="@+id/drawer_layout"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<!-- The main content view -->
+<LinearLayout
+    android:id="@+id/content_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        />
+</LinearLayout>
+
+<!-- The navigation drawer -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/drawer"
+        android:orientation="vertical"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@null"
+        android:padding="@dimen/drawer_menu_padding"
+        android:background="@color/colorDrawerBackground">
+
+
+        <LinearLayout
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/drawer_menu_padding_half"
+            android:paddingTop="@dimen/drawer_menu_padding_half"
+            android:paddingLeft="@dimen/drawer_menu_padding"
+            android:background="@drawable/drawer_item_selector">
+
+        <ImageView
+            android:layout_width="@dimen/drawer_menu_ic_size"
+            android:layout_height="@dimen/drawer_menu_ic_size"
+            android:src="@drawable/ic_language"
+            android:paddingRight="@dimen/drawer_menu_ic_right_padding"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/drawer_menu_text_size"
+            android:textAllCaps="true"
+            android:text="@string/map_filters"
+            android:textColor="@color/colorDrawerText"
+            android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/scenario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/drawer_menu_padding_half"
+            android:paddingTop="@dimen/drawer_menu_padding_half"
+            android:paddingLeft="@dimen/drawer_menu_padding"
+            android:background="@drawable/drawer_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/drawer_menu_ic_size"
+                android:layout_height="@dimen/drawer_menu_ic_size"
+                android:src="@drawable/ic_language"
+                android:paddingRight="@dimen/drawer_menu_ic_right_padding"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/drawer_menu_text_size"
+                android:textAllCaps="true"
+                android:text="@string/choose_scenario"
+                android:textColor="@color/colorDrawerText"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/drawer_menu_padding_half"
+            android:paddingTop="@dimen/drawer_menu_padding_half"
+            android:paddingLeft="@dimen/drawer_menu_padding"
+            android:background="@drawable/drawer_item_selector">
+
+            <ImageView
+                android:layout_width="@dimen/drawer_menu_ic_size"
+                android:layout_height="@dimen/drawer_menu_ic_size"
+                android:src="@drawable/ic_language"
+                android:paddingRight="@dimen/drawer_menu_ic_right_padding"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/drawer_menu_text_size"
+                android:textAllCaps="true"
+                android:text="@string/language"
+                android:textColor="@color/colorDrawerText"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

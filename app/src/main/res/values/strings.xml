@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RigaTour</string>
+
+    <string name="map_filters">Map Filters</string>
+    <string name="choose_scenario">Choose scenario</string>
+    <string name="language">Language</string>
 </resources>

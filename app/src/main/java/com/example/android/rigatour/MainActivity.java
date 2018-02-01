@@ -1,5 +1,6 @@
 package com.example.android.rigatour;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,22 +9,28 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 
-public class MapActivity extends AppCompatActivity {
-
-
+public class MainActivity extends AppCompatActivity {
 
     //navigation drawer variables
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
 
+    public LinearLayout mapFilterLayout;
+    public LinearLayout scenarioLayout;
+    public LinearLayout languageLayout;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
+        setContentView(R.layout.activity_main);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-
+        mapFilterLayout = (LinearLayout) findViewById(R.id.map);
+        scenarioLayout = (LinearLayout) findViewById(R.id.scenario);
+        languageLayout = (LinearLayout) findViewById(R.id.language);
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.app_name, R.string.app_name) {
             public void onDrawerClosed(View view) {
@@ -40,6 +47,9 @@ public class MapActivity extends AppCompatActivity {
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //removes drawer shadow
+        mDrawerLayout.setScrimColor(getResources().getColor(android.R.color.transparent));
     }
 
     @Override
@@ -50,10 +60,37 @@ public class MapActivity extends AppCompatActivity {
             return true;
         }
         // Handle your other action bar items...
-
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mapFilterLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(MainActivity.this, MapFilterActivity.class);
+                //myIntent.putExtra("key", value); //Optional parameters
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
+        scenarioLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(MainActivity.this, ScenarioActivity.class);
+                //myIntent.putExtra("key", value); //Optional parameters
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
+        languageLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(MainActivity.this, LanguageActivity.class);
+                //myIntent.putExtra("key", value); //Optional parameters
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
+    }
 
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {

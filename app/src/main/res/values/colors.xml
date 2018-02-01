@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="colorBackground">#f4f0f0</color>
+    <color name="colorPrimary">#5d4037</color>
+    <color name="colorPrimaryDark">#3e2723</color>
+    <color name="colorPrimaryLight">#bcaaa4</color>
+    <color name="colorAccent">#fb8c00</color>
+    <color name="colorBackground">#EFEBE9</color>
+    <color name="colorBlack">#646464</color>
+
+    <color name="colorDrawerBackground">#795548</color>
+    <color name="colorDrawerText">#ffffff</color>
+    <color name="colorDrawerItemSelect">#50bcaaa4</color>
 </resources>
